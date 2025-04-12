@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="450.0" prefWidth="500.0" style="-fx-background-color: #f4f4f4;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="consultation.psy.controllers.ModifierPsyController">
+
+    <Label layoutX="30" layoutY="20" style="-fx-font-size: 18px;" text="Modifier Psy" />
+
+    <Label layoutX="30" layoutY="70" text="Nom :" />
+    <TextField fx:id="nomTF" layoutX="180" layoutY="65" />
+
+    <Label layoutX="30" layoutY="110" text="Téléphone :" />
+    <TextField fx:id="telTF" layoutX="180" layoutY="105" />
+
+    <Label layoutX="30" layoutY="150" text="Email :" />
+    <TextField fx:id="emailTF" layoutX="180" layoutY="145" />
+
+    <Label layoutX="30" layoutY="190" text="Spécialité :" />
+    <TextField fx:id="specTF" layoutX="180" layoutY="185" />
+
+    <Label layoutX="30" layoutY="220" text="Date :" />
+    <DatePicker fx:id="dateTF" layoutX="150" layoutY="215" />
+
+    <Label layoutX="30" layoutY="260" text="Heure :" />
+    <TextField fx:id="heureTF" layoutX="150" layoutY="255" promptText="HH:mm" />
+
+    <Button layoutX="180" layoutY="320" onAction="#modifier" text="Modifier" />
+    <Button layoutX="270" layoutY="320" onAction="#supprimer" style="-fx-background-color: red; -fx-text-fill: white;" text="Supprimer" />
+    <Button fx:id="btnRetour" layoutX="420.0" layoutY="14.0" onAction="#retour" text="← Retour" />
+
+</AnchorPane>

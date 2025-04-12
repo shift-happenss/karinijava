@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="consultation.psy.controllers.DashboardUserController">
+    <Button layoutX="233.0" layoutY="187.0" onAction="#afficherConsultations" text="📅 Mes consultations" />
+    <Button layoutX="14.0" layoutY="22.0" onAction="#retourAccueil" text="↩ Retour Accueil" />
+
+
+</AnchorPane>
