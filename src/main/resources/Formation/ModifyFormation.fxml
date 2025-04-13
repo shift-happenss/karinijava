@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="tn.esprit.controllers.Formation.ModifyFormationController"
+            prefHeight="600.0" prefWidth="950.0"
+            style="-fx-background-color: #fdfdfd;">
+
+    <children>
+        <!-- Back Button -->
+        <Button text="Retour" onAction="#handleBackButton"
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white;"
+                layoutX="20" layoutY="20"/>
+
+        <VBox layoutX="50.0" layoutY="30.0" spacing="18" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="20.0">
+            <children>
+                <Label text="Modifier Formation" style="-fx-font-size: 22px; -fx-text-fill: #333; -fx-font-weight: bold;" />
+
+                <VBox spacing="12">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Titre :" prefWidth="120" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="titreField" prefWidth="450"/>
+                    </HBox>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Catégorie :" prefWidth="120" style="-fx-font-weight: bold;"/>
+                        <ComboBox fx:id="categorieComboBox" prefWidth="450"/>
+                    </HBox>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Description :" prefWidth="120" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="descriptionField" prefWidth="450"/>
+                    </HBox>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Cible :" prefWidth="120" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="cibleField" prefWidth="450"/>
+                    </HBox>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Formateur :" prefWidth="120" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="formateurField" prefWidth="450"/>
+                    </HBox>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="URL Vidéo :" prefWidth="120" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="urlVideoField" prefWidth="450"/>
+                    </HBox>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Image :" prefWidth="120" style="-fx-font-weight: bold;"/>
+                        <Button text="Choisir image" onAction="#handleImageSelection"/>
+                        <Label fx:id="imagePathLabel" text="Aucune image sélectionnée"/>
+                    </HBox>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Fichier :" prefWidth="120" style="-fx-font-weight: bold;"/>
+                        <Button text="Choisir fichier" onAction="#handleFileSelection"/>
+                        <Label fx:id="filePathLabel" text="Aucun fichier sélectionné"/>
+                    </HBox>
+
+                    <HBox spacing="10" alignment="TOP_LEFT">
+                        <Label text="Contenu :" prefWidth="120" style="-fx-font-weight: bold;"/>
+                        <TextArea fx:id="contenuTextArea" prefWidth="450" prefHeight="100"/>
+                    </HBox>
+                </VBox>
+
+                <HBox alignment="CENTER_RIGHT" spacing="20">
+                    <Button fx:id="saveButton" onAction="#handleSave" text="Enregistrer"
+                            style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 6px;"
+                            prefWidth="150" prefHeight="35"/>
+                    <Button fx:id="cancelButton" onAction="#handleBackButton" text="Annuler"
+                            style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 6px;"
+                            prefWidth="150" prefHeight="35"/>
+                </HBox>
+            </children>
+            <padding>
+                <Insets top="20" right="30" bottom="20" left="30"/>
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>
