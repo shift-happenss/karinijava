@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="tn.esprit.controllers.ModifierEvenementController">
+    <children>
+        <VBox spacing="20" alignment="TOP_CENTER"  AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" style="-fx-background-color: #f0f8ff;">
+
+            <Label text="Modifier l'Événement" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #00008B;"/>
+
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Nom :" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="tfNom" promptText="Nom de l'événement" style="-fx-background-color: #FFFFFF;" prefWidth="400"/>
+            </VBox>
+
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Type :" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="tfType" promptText="Type d'événement" style="-fx-background-color: #FFFFFF;" prefWidth="400"/>
+            </VBox>
+
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Date de début :" style="-fx-font-weight: bold;"/>
+                <DatePicker fx:id="dpDateDebut" prefWidth="400"/>
+            </VBox>
+
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Date de fin :" style="-fx-font-weight: bold;"/>
+                <DatePicker fx:id="dpDateFin" prefWidth="400"/>
+            </VBox>
+
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Contenu :" style="-fx-font-weight: bold;"/>
+                <TextArea fx:id="taContenu" promptText="Contenu de l'événement" prefRowCount="4" style="-fx-background-color: #FFFFFF;" prefWidth="400"/>
+            </VBox>
+
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Lieu :" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="tfLieu" promptText="Lieu de l'événement" style="-fx-background-color: #FFFFFF;" prefWidth="400"/>
+            </VBox>
+
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Latitude :" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="tfLatitude" promptText="Latitude" style="-fx-background-color: #FFFFFF;" prefWidth="400"/>
+            </VBox>
+
+            <VBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Longitude :" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="tfLongitude" promptText="Longitude" style="-fx-background-color: #FFFFFF;" prefWidth="400"/>
+            </VBox>
+
+            <HBox spacing="15" alignment="CENTER">
+                <Button text="Modifier" onAction="#handleModifier" style="-fx-background-color: #FFD700; -fx-text-fill: #00008B; -fx-font-weight: bold;"/>
+                <Button text="Annuler" onAction="#handleAnnuler" style="-fx-background-color: #FFD700; -fx-text-fill: #00008B; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

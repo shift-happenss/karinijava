@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="tn.esprit.controllers.AjouterEvenementController">
+    <children>
+        <VBox spacing="15" alignment="CENTER" AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" style="-fx-background-color: #f0f8ff;">
+            <Label text="Ajouter un Evenement" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #00008B;"/>
+            <TextField fx:id="tfNom" promptText="Nom de l'événement" style="-fx-background-color: #FFFFFF;"/>
+            <TextField fx:id="tfType" promptText="Type de l'événement" style="-fx-background-color: #FFFFFF;"/>
+            <HBox spacing="10">
+                <Label text="Date Début:" style="-fx-text-fill: #00008B;"/>
+                <DatePicker fx:id="dpDateDebut"/>
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Date Fin:" style="-fx-text-fill: #00008B;"/>
+                <DatePicker fx:id="dpDateFin"/>
+            </HBox>
+            <TextArea fx:id="taContenu" promptText="Contenu" prefRowCount="4" style="-fx-background-color: #FFFFFF;"/>
+            <TextField fx:id="tfLieu" promptText="Lieu" style="-fx-background-color: #FFFFFF;"/>
+            <TextField fx:id="tfLatitude" promptText="Latitude" style="-fx-background-color: #FFFFFF;"/>
+            <TextField fx:id="tfLongitude" promptText="Longitude" style="-fx-background-color: #FFFFFF;"/>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Ajouter" onAction="#handleAjouter" style="-fx-background-color: #FFD700; -fx-text-fill: #00008B;"/>
+                <Button text="Annuler" onAction="#handleAnnuler" style="-fx-background-color: #FFD700; -fx-text-fill: #00008B;"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
