@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 public class AjouterConsultationController {
 
@@ -28,14 +29,48 @@ public class AjouterConsultationController {
 
 
 
+
     @FXML
     public void initialize() {
         try {
-            psyCB.getItems().addAll(new ServicePsy().getList());
+            ServicePsy servicePsy = new ServicePsy();
+
+            // Récupérer la liste des psy de la base de données
+            List<Psy> psys = servicePsy.getList();
+
+            // Ajouter les psy dans le ComboBox
+            for (Psy p : psys) {
+                psyCB.getItems().add(p);  // Ajouter l'objet Psy dans le ComboBox
+            }
+
+            // Personnaliser l'affichage des items dans le ComboBox (seulement le nom du psy)
+            psyCB.setCellFactory(param -> new ListCell<Psy>() {
+                @Override
+                protected void updateItem(Psy psy, boolean empty) {
+                    super.updateItem(psy, empty);
+                    if (empty || psy == null) {
+                        setText(null);
+                    } else {
+                        setText(psy.getNom());  // Afficher le nom du psy dans le ComboBox
+                    }
+                }
+            });
+
+            // Lorsque l'utilisateur sélectionne un psy dans le ComboBox
+            psyCB.setOnAction(event -> {
+                Psy selectedPsy = psyCB.getValue();
+                if (selectedPsy != null) {
+                    // Traiter l'objet Psy sélectionné, par exemple affecter le psy à une consultation
+                    System.out.println("Psy sélectionné : " + selectedPsy.getNom());
+                }
+            });
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+
 
     @FXML
     void ajouterConsultation(ActionEvent event) {
@@ -122,7 +157,7 @@ public class AjouterConsultationController {
     @FXML
     void afficherpsys(ActionEvent event){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherPsy.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Affpsy.fxml"));
             Parent root = loader.load();
             btnAffpsy.getScene().setRoot(root);
         } catch (IOException e) {

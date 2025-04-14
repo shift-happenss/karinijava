@@ -38,15 +38,37 @@ public class ModifierConsultationController {
 
         try {
             ServicePsy servicePsy = new ServicePsy();
-            psyCombo.getItems().addAll(servicePsy.getList());
+            // Vider la liste du ComboBox avant d'ajouter les nouveaux psy
+            psyCombo.getItems().clear();
+
+            // Ajouter les psy dans le ComboBox mais en affichant seulement leurs noms
+            for (Psy p : servicePsy.getList()) {
+                psyCombo.getItems().add(p);
+            }
+
+            // Afficher seulement le nom du psy dans le ComboBox
+            psyCombo.setCellFactory(param -> new ListCell<Psy>() {
+                @Override
+                protected void updateItem(Psy psy, boolean empty) {
+                    super.updateItem(psy, empty);
+                    if (empty || psy == null) {
+                        setText(null);
+                    } else {
+                        setText(psy.getNom());  // Afficher uniquement le nom du psy
+                    }
+                }
+            });
+
             if (consultation.getPsy() != null) {
+                // Parcourir la liste des psy dans le ComboBox pour trouver celui qui correspond à l'id de la consultation
                 for (Psy p : psyCombo.getItems()) {
                     if (p.getId() == consultation.getPsy().getId()) {
-                        psyCombo.setValue(p);
+                        psyCombo.setValue(p);  // Sélectionner le psy dans le ComboBox
                         break;
                     }
                 }
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

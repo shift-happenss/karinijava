@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.List;
 
-public class AfficherPsyController {
+public class AffpsyController {
 
     @FXML private ListView<Psy> listViewPsy;
     @FXML private Button btnRetour;
@@ -44,13 +44,9 @@ public class AfficherPsyController {
                         setGraphic(null);
                     } else {
                         Label label = new Label(p.getNom() + " | " + p.getSpecialite() + " | " + p.getMail()+ " | " + p.getNumerotel()+ " | " + p.getDatedispo()+ " | " + p.getTimedispo());
-                        Button btnModifier = new Button("Modifier");
-                        Button btnDetails = new Button("Détails");
 
-                        btnModifier.setOnAction(e -> modifierPsy(p));
-                        btnDetails.setOnAction(e -> ouvrirConsultationsDuPsy(p));
 
-                        HBox hBox = new HBox(15, label, btnModifier, btnDetails);
+                        HBox hBox = new HBox(15, label);
                         setGraphic(hBox);
                     }
                 }
@@ -122,42 +118,13 @@ public class AfficherPsyController {
         sortPsys("date", false);  // Sort by date in descending order
     }
 
-    private void modifierPsy(Psy p) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModifierPsy.fxml"));
-            Parent root = loader.load();
-            ModifierPsyController controller = loader.getController();
-            controller.setPsy(p);
-            Stage stage = new Stage();
-            stage.setTitle("Modifier Psy");
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-            initialize(); // recharge la liste après modification
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
-    private void ouvrirConsultationsDuPsy(Psy p) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ConsultationsParPsy.fxml"));
-            Parent root = loader.load();
-            ConsultationsParPsyController controller = loader.getController();
-            controller.setPsy(p);
-            Stage stage = new Stage();
-            stage.setTitle("Consultations de " + p.getNom());
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @FXML
     void retour() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterPsy.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterConsultation.fxml"));
             Parent root = loader.load();
             btnRetour.getScene().setRoot(root); // 👈 Affiche la scène précédente dans la même fenêtre
         } catch (IOException e) {
