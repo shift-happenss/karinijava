@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.ModifierCoursController"
+      prefWidth="500"
+      spacing="20"
+      alignment="TOP_CENTER"
+      style="-fx-background-color: linear-gradient(to bottom, #1d2671, #dfc51e); -fx-padding: 30;">
+
+   <Label text="✏️ Modifier le Cours"
+          style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+   <TextField fx:id="titreField"
+              promptText="Titre du cours"
+              style="-fx-padding: 10; -fx-font-size: 14px;"/>
+
+   <TextField fx:id="descriptionField"
+              promptText="Description du cours"
+              style="-fx-padding: 10; -fx-font-size: 14px;"/>
+
+   <DatePicker fx:id="dateDebutField"
+               promptText="Sélectionner la date de début"
+               style="-fx-padding: 10; -fx-font-size: 14px;"/>
+
+   <DatePicker fx:id="dateFinField"
+               promptText="Sélectionner la date de fin"
+               style="-fx-padding: 10; -fx-font-size: 14px;"/>
+
+   <TextField fx:id="lienField"
+              promptText="Entrer le lien"
+              style="-fx-padding: 10; -fx-font-size: 14px;"/>
+
+   <Button text="💾 Sauvegarder les modifications"
+           onAction="#modifierCours"
+           style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 15;"/>
+</VBox>

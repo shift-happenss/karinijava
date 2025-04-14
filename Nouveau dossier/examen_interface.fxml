@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ExamenController" prefWidth="800" prefHeight="600" style="-fx-background-color: #FAFAFA;">
+   <children>
+      <VBox fx:id="vboxContainer" layoutX="20.0" layoutY="20.0" spacing="20.0" prefWidth="760.0">
+         <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+         <!-- Form Title -->
+         <Label text="Gestion des Examens" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+
+         <!-- Form Container -->
+         <VBox spacing="15.0" style="-fx-background-color: #FFFFFF; -fx-padding: 20px; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 4);">
+
+            <HBox spacing="20.0">
+               <Label text="Titre:" minWidth="60"/>
+               <TextField fx:id="txtTitreExamen" prefWidth="250" style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-padding: 8px; -fx-font-size: 14px;"/>
+               <Label text="Note:" minWidth="50"/>
+               <TextField fx:id="txtNote" prefWidth="100" style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-padding: 8px; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <HBox spacing="20.0" alignment="TOP_LEFT">
+               <Label text="Description:" minWidth="80"/>
+               <TextArea fx:id="txtDescriptionExamen" prefWidth="500" prefHeight="80" wrapText="true" style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-padding: 8px; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <HBox spacing="20.0">
+               <Label text="Cours:" minWidth="60"/>
+               <ComboBox fx:id="comboCours" prefWidth="250" style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-padding: 6px; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <!-- Buttons -->
+            <HBox spacing="15.0">
+               <Button text="Ajouter" onAction="#ajouterExamen" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-radius: 6;"/>
+               <Button text="Modifier" onAction="#modifierExamen" style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-radius: 6;"/>
+               <Button text="Supprimer" onAction="#supprimerExamen" style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-radius: 6;"/>
+               <Button text="Aller à Cours" onAction="#handleGoToCours" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-radius: 6;"/>
+               <Button text="Aller à l'interface Question"
+                       onAction="#goToQuestionInterface"
+                       style="-fx-background-color: #03A9F4; -fx-text-fill: white; -fx-padding: 10px; -fx-font-size: 14px; -fx-border-radius: 5px;"/>
+
+            </HBox>
+         </VBox>
+
+         <!-- TableView -->
+         <TableView fx:id="tableView" prefHeight="280" style="-fx-border-color: #DDDDDD; -fx-border-radius: 10px;">
+            <columns>
+               <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+               <TableColumn fx:id="titreColumn" text="Titre" prefWidth="150"/>
+               <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="250"/>
+               <TableColumn fx:id="noteColumn" text="Note" prefWidth="100"/>
+               <TableColumn fx:id="coursColumn" text="Cours" prefWidth="150"/>
+            </columns>
+         </TableView>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.AddCoursController"
+      spacing="15"
+      alignment="CENTER"
+      style="-fx-background-color: linear-gradient(to bottom, #1d2671, #c39237); -fx-padding: 40; -fx-background-radius: 15;"
+      prefWidth="400">
+
+   <TextField fx:id="titreField"
+              promptText="📘 Titre du cours"
+              style="-fx-padding: 10px; -fx-background-radius: 10;" />
+
+   <TextField fx:id="descriptionField"
+              promptText="📝 Description"
+              style="-fx-padding: 10px; -fx-background-radius: 10;" />
+
+   <DatePicker fx:id="dateDebutField"
+               promptText="📅 Date de début"
+               style="-fx-padding: 10px; -fx-background-radius: 10;" />
+
+   <DatePicker fx:id="dateFinField"
+               promptText="📅 Date de fin"
+               style="-fx-padding: 10px; -fx-background-radius: 10;" />
+
+   <TextField fx:id="lienField"
+              promptText="🔗 Lien"
+              style="-fx-padding: 10px; -fx-background-radius: 10;" />
+
+   <Button text="✅ Ajouter Cours"
+           onAction="#ajouterCours"
+           style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 12px 20px; -fx-background-radius: 15;" />
+</VBox>

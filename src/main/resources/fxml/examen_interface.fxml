@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.ExamenController"
+      prefWidth="1000"
+      spacing="20"
+      style="-fx-background-color: linear-gradient(to bottom, #1d2671, #dfc51e); -fx-padding: 30;">
+
+   <!-- Sidebar à gauche -->
+   <fx:include source="sidebar.fxml"/>
+
+   <!-- Contenu principal -->
+   <VBox spacing="20"
+         alignment="TOP_CENTER"
+         style="-fx-padding: 30;"
+         HBox.hgrow="ALWAYS">
+
+      <Label text="📝 Liste des Examens"
+             style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+      <Button text="➕ Ajouter un examen"
+              onAction="#openAddExamenPopup"
+              style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 15;"/>
+
+      <ScrollPane hbarPolicy="NEVER" vbarPolicy="ALWAYS"
+                  style="-fx-background-color: transparent; -fx-border-width: 0;">
+         <GridPane fx:id="examenContainer"
+                   hgap="20" vgap="20"
+                   alignment="TOP_CENTER"
+                   style="-fx-padding: 20;">
+         </GridPane>
+      </ScrollPane>
+
+   </VBox>
+</HBox>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.QuestionController" prefWidth="800" prefHeight="600" style="-fx-background-color: #FAFAFA;">
+   <children>
+      <VBox fx:id="vboxContainer" layoutX="20.0" layoutY="20.0" spacing="20.0" prefWidth="760.0">
+         <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+         <!-- Title -->
+         <Label text="Gestion des Questions" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+
+         <!-- Form Section -->
+         <VBox spacing="15.0" style="-fx-background-color: #FFFFFF; -fx-padding: 20px; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 10, 0, 0, 4);">
+
+            <!-- Texte de la question -->
+            <HBox spacing="20.0">
+               <Label text="Texte:" minWidth="60"/>
+               <TextField fx:id="txtTexte" prefWidth="250" style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-padding: 8px; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <!-- Type de la question -->
+            <HBox spacing="20.0">
+               <Label text="Type:" minWidth="60"/>
+               <TextField fx:id="txtType" prefWidth="250" style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-padding: 8px; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <!-- Examen -->
+            <HBox spacing="20.0">
+               <Label text="Examen:" minWidth="60"/>
+               <ComboBox fx:id="comboExamen" prefWidth="250" style="-fx-background-radius: 6; -fx-border-radius: 6; -fx-padding: 6px; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <!-- Buttons -->
+            <HBox spacing="15.0" alignment="CENTER">
+               <Button text="Ajouter" onAction="#ajouterQuestion" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-radius: 6;"/>
+               <Button text="Modifier" onAction="#modifierQuestion" style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-radius: 6;"/>
+               <Button text="Supprimer" onAction="#supprimerQuestion" style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px; -fx-background-radius: 6;"/>
+            </HBox>
+         </VBox>
+
+         <!-- Table Section -->
+         <TableView fx:id="tableView" prefHeight="280" style="-fx-border-color: #DDDDDD; -fx-border-radius: 10px;">
+            <columns>
+               <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+               <TableColumn fx:id="texteColumn" text="Texte" prefWidth="250"/>
+               <TableColumn fx:id="typeColumn" text="Type" prefWidth="150"/>
+               <TableColumn fx:id="examenIdColumn" text="Examen" prefWidth="150"/>
+            </columns>
+         </TableView>
+      </VBox>
+   </children>
+</AnchorPane>

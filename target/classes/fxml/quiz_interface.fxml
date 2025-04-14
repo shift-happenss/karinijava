@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.QuizController"
+      spacing="20" alignment="TOP_CENTER"
+      style="-fx-background-color: linear-gradient(to bottom, #1d2671, #c33764); -fx-padding: 30;"
+      prefWidth="800" prefHeight="600">
+
+   <Label text="🎯 Passer l'Examen"
+          style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;" />
+
+   <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS"
+               style="-fx-background-color: transparent;">
+      <VBox fx:id="questionsContainer"
+            spacing="20"
+            style="-fx-padding: 20;">
+      </VBox>
+   </ScrollPane>
+
+   <Button text="🎉 Soumettre"
+           fx:id="submitButton"
+           style="-fx-font-size: 16px; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-padding: 10 20;"
+           onAction="#handleSubmit"/>
+</VBox>
