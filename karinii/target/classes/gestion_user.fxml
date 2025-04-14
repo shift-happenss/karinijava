@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controllers.GestionUserController">
+    <!-- Liste des utilisateurs -->
+    <ListView fx:id="userListView" layoutX="30" layoutY="30" prefHeight="200" prefWidth="300"/>
+
+    <!-- Champs de saisie -->
+    <TextField fx:id="tfNom" layoutX="30" layoutY="240" promptText="Nom" />
+    <TextField fx:id="tfPrenom" layoutX="30" layoutY="280" promptText="Prénom" />
+    <TextField fx:id="tfEmail" layoutX="30" layoutY="320" promptText="Email" />
+    <TextField fx:id="tfNumTel" layoutX="30" layoutY="360" promptText="Numéro de téléphone" />
+    <TextField fx:id="tfRole" layoutX="30" layoutY="400" promptText="Rôle" />
+
+    <!-- Boutons d'actions -->
+    <HBox spacing="10" layoutX="30" layoutY="440">
+        <Button text="Modifier" onAction="#onUpdate"/>
+        <Button text="Supprimer" onAction="#onDelete"/>
+    </HBox>
+
+    <!-- Bouton Actualiser -->
+    <Button text="Actualiser" onAction="#refreshListView" layoutX="30" layoutY="480"/>
+</AnchorPane>
