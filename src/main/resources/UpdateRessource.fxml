@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="tn.esprit.gui.UpdateRessourceController" spacing="10.0" padding="20.0">
+
+    <TextField fx:id="titreField" promptText="Titre"/>
+    <TextField fx:id="descriptionField" promptText="Description"/>
+    <TextField fx:id="typeField" promptText="Type"/>
+    <TextField fx:id="videoField" promptText="Vidéo"/>
+    <TextField fx:id="imageField" promptText="Image"/>
+    <TextField fx:id="fileField" promptText="Fichier"/>
+    <TextField fx:id="contentField" promptText="Contenu"/>
+
+    <HBox spacing="10.0" alignment="CENTER">
+        <Button text="Sauvegarder" onAction="#handleSaveClick"/>
+        <Button text="Annuler" onAction="#handleCancelClick"/>
+    </HBox>
+</VBox>

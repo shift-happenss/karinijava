@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="tn.esprit.gui.AjouterCommentaireController">
+
+    <children>
+        <Label text="Ajouter un Commentaire" layoutX="250" layoutY="14" style="-fx-font-size: 18px;"/>
+
+        <Label text="Propriétaire ID:" layoutX="50" layoutY="50"/>
+        <TextField fx:id="txtProprietereId" layoutX="150" layoutY="50" />
+
+
+
+        <Label text="Contenu:" layoutX="50" layoutY="130"/>
+        <TextArea fx:id="txtContenu" layoutX="150" layoutY="130" prefHeight="100" prefWidth="300"/>
+
+        <Label text="Réponse:" layoutX="50" layoutY="240"/>
+        <TextArea fx:id="txtReponse" layoutX="150" layoutY="240" prefHeight="100" prefWidth="300"/>
+
+        <Button text="Ajouter Commentaire" layoutX="250" layoutY="370" onAction="#handleAjouterCommentaire"/>
+
+    </children>
+</AnchorPane>

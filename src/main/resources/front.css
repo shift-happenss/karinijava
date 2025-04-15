@@ -1,0 +1,103 @@
+/* Navbar Styles */
+.top-navbar {
+    -fx-background-color: #002D62;
+    -fx-padding: 10;
+}
+
+.bottom-navbar {
+    -fx-background-color: #003366;
+    -fx-padding: 10;
+}
+
+.top-navbar .button, .bottom-navbar .button {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.top-navbar .button:hover, .bottom-navbar .button:hover {
+    -fx-background-color: #0288d1;
+}
+
+/* Main Content */
+.main-content {
+    -fx-padding: 20px;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #28a745;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+
+.button:hover {
+    -fx-background-color: #218838;
+}
+
+/* Footer */
+.footer-button {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+/* Définit la couleur de fond et la couleur du texte pour chaque type de bouton */
+
+.button-default {
+    -fx-background-color: transparent;
+    -fx-border-color: #007bff;
+    -fx-border-width: 2px;
+    -fx-text-fill: #007bff;
+}
+
+.button-primary {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+}
+
+.button-success {
+    -fx-background-color: #28a745;
+    -fx-text-fill: white;
+}
+
+.button-info {
+    -fx-background-color: #17a2b8;
+    -fx-text-fill: white;
+}
+
+.button-warning {
+    -fx-background-color: #ffc107;
+    -fx-text-fill: black;
+}
+
+.button-danger {
+    -fx-background-color: #dc3545;
+    -fx-text-fill: white;
+}
+
+.button-link {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #007bff;
+}
+
+.button-disable {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #b0b0b0;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 2px;
+}
+
+/* Pour les boutons avec une flèche */
+.button-arrow {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-padding: 10px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+
+/* Pour les boutons avec un effet d'hover */
+.button:hover {
+    -fx-opacity: 0.8;
+}

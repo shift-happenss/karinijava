@@ -1,0 +1,109 @@
+/* Sidebar */
+.vbox {
+    -fx-background-color: #343a40;
+    -fx-padding: 20px;
+    -fx-spacing: 10px;
+}
+
+.vbox .button {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Navbar */
+.hbox {
+    -fx-background-color: #ffffff;
+    -fx-padding: 10px;
+}
+
+.hbox .button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-padding: 10px;
+}
+
+.hbox .text-field {
+    -fx-padding: 5px;
+    -fx-background-color: transparent;
+}
+
+/* Content */
+.vbox-content {
+    -fx-padding: 20px;
+    -fx-spacing: 20px;
+}
+
+.vbox-content .hbox {
+    -fx-spacing: 20px;
+}
+
+.vbox-content .vbox {
+    -fx-padding: 20px;
+    -fx-spacing: 20px;
+    -fx-text-fill: white;
+}
+
+.vbox-content .vbox .label {
+    -fx-font-size: 18px;
+}
+/* Définit la couleur de fond et la couleur du texte pour chaque type de bouton */
+
+.button-default {
+    -fx-background-color: transparent;
+    -fx-border-color: #007bff;
+    -fx-border-width: 2px;
+    -fx-text-fill: #007bff;
+}
+
+.button-primary {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+}
+
+.button-success {
+    -fx-background-color: #28a745;
+    -fx-text-fill: white;
+}
+
+.button-info {
+    -fx-background-color: #17a2b8;
+    -fx-text-fill: white;
+}
+
+.button-warning {
+    -fx-background-color: #ffc107;
+    -fx-text-fill: black;
+}
+
+.button-danger {
+    -fx-background-color: #dc3545;
+    -fx-text-fill: white;
+}
+
+.button-link {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #007bff;
+}
+
+.button-disable {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #b0b0b0;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 2px;
+}
+
+/* Pour les boutons avec une flèche */
+.button-arrow {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-padding: 10px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+}
+
+/* Pour les boutons avec un effet d'hover */
+.button:hover {
+    -fx-opacity: 0.8;
+}

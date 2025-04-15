@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="tn.esprit.gui.AfficherCommentaireController">
+
+    <children>
+        <TableView fx:id="tableCommentaires" layoutX="14" layoutY="14" prefWidth="620" prefHeight="400">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                <TableColumn fx:id="colProprietereId" text="Propriétaire ID" prefWidth="120"/>
+                <TableColumn fx:id="colRessourceId" text="Ressource ID" prefWidth="120"/>
+                <TableColumn fx:id="colContenu" text="Contenu" prefWidth="160"/>
+                <TableColumn fx:id="colReponse" text="Réponse" prefWidth="160"/>
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
