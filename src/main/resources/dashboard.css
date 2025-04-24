@@ -1,0 +1,18 @@
+.sidebar {
+    -fx-background-color: #2C3E50;
+    -fx-padding: 15;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 0 1 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.2, 2, 0);
+}
+
+
+.sidebar-item {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 0;
+    -fx-cursor: hand;
+}
+.sidebar-item:hover {
+    -fx-background-color: #34495E;
+}

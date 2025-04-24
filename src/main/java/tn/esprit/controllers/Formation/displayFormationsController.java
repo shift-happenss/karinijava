@@ -36,24 +36,34 @@ public class displayFormationsController implements Initializable {
     }
 
     private void loadFormations() {
+        loadFormations(""); // appel par défaut sans filtre
+    }
+
+    private void loadFormations(String keyword) {
         formationsContainer.getChildren().clear();
         List<Formation> formations = formationService.getAll();
 
         for (Formation formation : formations) {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Formation/FormationItem.fxml"));
-                Node node = loader.load();
+            if (keyword == null || keyword.isEmpty() ||
+                    formation.getTitre().toLowerCase().contains(keyword.toLowerCase()) ) {
 
-                FormationItemController controller = loader.getController();
-                controller.setFormation(formation);
-                controller.setParentController(this);
-                controller.setHostServices(this.hostServices);
-                formationsContainer.getChildren().add(node);
-            } catch (IOException e) {
-                e.printStackTrace();
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Formation/FormationItem.fxml"));
+                    Node node = loader.load();
+
+                    FormationItemController controller = loader.getController();
+                    controller.setFormation(formation);
+                    controller.setParentController(this);
+                    controller.setHostServices(this.hostServices);
+                    formationsContainer.getChildren().add(node);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-        }}
-        private void navigateToAddFormation() {
+        }
+    }
+
+    private void navigateToAddFormation() {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Formation/AddFormation.fxml"));
                 Parent root = loader.load();
@@ -69,7 +79,11 @@ public class displayFormationsController implements Initializable {
             }
         }
         private void setupEventHandlers() {
-            addFormationButton.setOnAction(event -> navigateToAddFormation());
+
+        addFormationButton.setOnAction(event -> navigateToAddFormation());
+            searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+                loadFormations(newValue); // recharge avec le mot-clé
+            });
         }
 
 
@@ -77,6 +91,8 @@ public class displayFormationsController implements Initializable {
         public void refreshFormations() {
             loadFormations();
         }
+
+
     public void setHostServices(HostServices hostServices) {
         this.hostServices = hostServices;
     }

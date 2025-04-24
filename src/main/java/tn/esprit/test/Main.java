@@ -2,10 +2,8 @@ package tn.esprit.test;
 
 import tn.esprit.entities.Categorie;
 import tn.esprit.entities.Formation;
-import tn.esprit.entities.Personne;
 import tn.esprit.services.ServiceCategorie;
 import tn.esprit.services.ServiceFormation;
-import tn.esprit.services.ServicePersonne;
 import tn.esprit.utils.MyDataBase;
 
 import java.sql.SQLException;

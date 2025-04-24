@@ -5,38 +5,46 @@
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 
-<?import javafx.collections.FXCollections?>
-<?import java.lang.String?>
-<VBox xmlns="http://javafx.com/javafx/8.0.171"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="tn.esprit.controllers.Categorie.ListeCategoriesController"
-      spacing="20"
-      styleClass="page-container"
-      stylesheets="@/Categorie/style.css">
+<BorderPane xmlns="http://javafx.com/javafx/21.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="tn.esprit.controllers.Categorie.ListeCategoriesController"
+            styleClass="page-container"
+            stylesheets="@/Categorie/style.css">
 
-    <HBox spacing="15" alignment="CENTER_LEFT" styleClass="toolbar">
-        <HBox spacing="10" alignment="CENTER_LEFT">
-            <Label text="🔍" styleClass="icon-label"/>
-            <TextField fx:id="searchField" promptText="Nom catégorie..." styleClass="search-field"/>
-        </HBox>
-        <ComboBox fx:id="triComboBox" prefWidth="180" promptText="Trier par" styleClass="combo-box"/>
-    </HBox>
+    <!-- Sidebar à gauche -->
+    <left>
+        <fx:include source="/sidebar.fxml"/>
+    </left>
 
-    <VBox fx:id="detailsBox"
-          spacing="10"
-          visible="false"
-          styleClass="details-box">
-        <Label fx:id="labelNom" styleClass="details-title"/>
-        <Label fx:id="labelDescription" wrapText="true" styleClass="details-description"/>
-    </VBox>
+    <!-- Contenu principal -->
+    <center>
+        <VBox spacing="10" >
 
-    <HBox spacing="10" alignment="CENTER_LEFT">
-        <Label text="📂 Gestion des Catégories" styleClass="page-title"/>
-        <Button text="➕ Ajouter" onAction="#ajouterCategorie" styleClass="btn-success"/>
-    </HBox>
+            <HBox spacing="15" alignment="CENTER_LEFT" styleClass="toolbar">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="🔍" styleClass="icon-label"/>
+                    <TextField fx:id="searchField" promptText="Nom catégorie..." styleClass="search-field"/>
+                </HBox>
+                <ComboBox fx:id="triComboBox" prefWidth="180" promptText="Trier par" styleClass="combo-box"/>
+            </HBox>
 
-    <ScrollPane fitToWidth="true" styleClass="scroll-pane">
-        <VBox fx:id="categoriesContainer" spacing="10" styleClass="category-list"/>
-    </ScrollPane>
+            <VBox fx:id="detailsBox"
+                  spacing="10"
+                  visible="false"
+                  styleClass="details-box">
+                <Label fx:id="labelNom" styleClass="details-title"/>
+                <Label fx:id="labelDescription" wrapText="true" styleClass="details-description"/>
+            </VBox>
 
-</VBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="📂 Gestion des Catégories" styleClass="page-title"/>
+                <Button text="➕ Ajouter" onAction="#ajouterCategorie" styleClass="btn-success"/>
+            </HBox>
+
+            <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+                <VBox fx:id="categoriesContainer" spacing="10" styleClass="category-list"/>
+            </ScrollPane>
+
+        </VBox>
+    </center>
+</BorderPane>

@@ -40,12 +40,13 @@ public class FormationItemController {
     public void setParentController(displayFormationsController controller) {
         this.parentController = controller;
     }
+
+
     private void updateUI() {
         titreLabel.setText(formation.getTitre());
         descriptionLabel.setText(formation.getDescription());
         formateurLabel.setText("Formateur: " + formation.getFormateur());
     }
-
     @FXML
     private void handleModify() {
         try {

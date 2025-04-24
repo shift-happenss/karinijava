@@ -10,7 +10,7 @@ public class MainJavaFX extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         //Parent root = FXMLLoader.load(getClass().getResource("/Categorie/ListeCategories.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("/Categorie/ListeCategories.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Formation/displayFormationsFront.fxml"));
 
         Scene scene = new Scene(root);
         stage.setTitle("Ajouter Formation");
