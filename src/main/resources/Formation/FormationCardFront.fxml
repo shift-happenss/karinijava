@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="tn.esprit.controllers.Formation.FormationCardFrontController"
+            prefWidth="250" prefHeight="340"
+            style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-radius: 12; -fx-background-radius: 12;
+                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 4);"
+            onMouseEntered="#onHover"
+            onMouseExited="#onExit">
+
+    <VBox fx:id="cardContainer" spacing="10" alignment="TOP_CENTER"
+          AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <ImageView fx:id="imageView"
+                   fitHeight="130" fitWidth="250"
+                   preserveRatio="false"
+                   style="-fx-background-color: #eeeeee;"
+                   smooth="true" />
+
+        <VBox spacing="4" maxWidth="220">
+            <Label fx:id="titreLabel"
+                   wrapText="true"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+            <Label fx:id="descriptionLabel"
+                   wrapText="true"
+                   maxHeight="40"
+                   style="-fx-font-size: 13px; -fx-text-fill: #616161;" />
+
+            <Label fx:id="formateurLabel"
+                   style="-fx-font-size: 12px; -fx-text-fill: #9e9e9e;" />
+
+            <Button text="Voir plus"
+                    onAction="#handleVoirDetails"
+                    maxWidth="100"
+                    style="-fx-background-color: #3f51b5; -fx-text-fill: white; -fx-background-radius: 8;
+                           -fx-cursor: hand; -fx-font-weight: bold;" />
+        </VBox>
+    </VBox>
+</AnchorPane>

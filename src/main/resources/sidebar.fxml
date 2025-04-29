@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.2"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="tn.esprit.controllers.SidebarController"
+      spacing="10"
+      styleClass="sidebar"
+      prefWidth="200"
+      alignment="TOP_LEFT"
+      stylesheets="dashboard.css">
+
+    <Label text="🏠 Accueil" styleClass="sidebar-item"/>
+    <Label text="📂 Catégories" styleClass="sidebar-item"/>
+    <Label text="🎓 Formations" styleClass="sidebar-item"/>
+    <Label text="⚙️ Paramètres" styleClass="sidebar-item"/>
+
+</VBox>

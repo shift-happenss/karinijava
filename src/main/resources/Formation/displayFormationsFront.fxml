@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="tn.esprit.controllers.Formation.DisplayFormationsFrontController"
+            style="-fx-background-color: #f8f8f8;">
+
+    <top>
+        <Label text="Toutes les Formations"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;
+                      -fx-border-width: 0 0 1 0; -fx-border-color: #ddd; -fx-alignment: CENTER_LEFT;
+                      -fx-label-padding: 20 0 10 20;" />
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+            <FlowPane fx:id="formationsContainer"
+                      hgap="20"
+                      vgap="20"
+                      prefWidth="1000"
+                      style="-fx-background-color: transparent;"
+                      orientation="HORIZONTAL" />
+        </ScrollPane>
+    </center>
+</BorderPane>
