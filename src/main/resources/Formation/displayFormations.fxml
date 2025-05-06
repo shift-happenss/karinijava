@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.controllers.Formation.displayFormationsController"
+            prefHeight="600.0" prefWidth="900.0"
+            styleClass="main-container"
+            stylesheets="@/Formation/style.css">
+
+    <!-- 🔝 Top bar stylée -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="top-bar">
+            <Label text="📚 Liste des Formations" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="addFormationButton" text="➕ Ajouter Formation" styleClass="btn-add"/>
+        </HBox>
+    </top>
+    <!-- 🔽 Bouton retour en bas -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="10" >
+            <Button onAction="#allerVersadmin" styleClass="button-info" text="⬅ Retour Admin"/>
+        </HBox>
+    </bottom>
+    <!-- 🧾 Liste formations -->
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="scroll-pane">
+            <VBox fx:id="formationsContainer" spacing="15" styleClass="formations-list"/>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/13"
+            fx:controller="org.example.controllers.ahmed.ModifierEmploiController"
+            prefWidth="1290" prefHeight="690"
+            stylesheets="@/dashboard.css">
+    <children>
+        <VBox spacing="0"
+              AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
+              AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+
+            <!-- Navbar avec fond bleu -->
+            <HBox styleClass="hbox" spacing="10" style="-fx-background-color: blue;">
+                <Button text="Home" styleClass="button-primary"/>
+                <Button text="About" styleClass="button-primary"/>
+                <Button text="Pages" styleClass="button-primary"/>
+                <Button text="Contact" styleClass="button-primary"/>
+            </HBox>
+
+            <!-- Contenu principal, qui s'étend pour placer le footer en bas -->
+            <VBox styleClass="vbox-content" spacing="10" VBox.vgrow="ALWAYS">
+                <Label text="Modifier l'Emploi"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+                <VBox spacing="5">
+                    <Label text="Titre de l'emploi :" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="tfTitre" promptText="Titre de l'emploi" style="-fx-background-color: #FFFFFF;" prefWidth="400"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Description de l'emploi :" style="-fx-font-weight: bold;"/>
+                    <TextArea fx:id="taDescription" promptText="Description de l'emploi" prefRowCount="4"
+                              style="-fx-background-color: #FFFFFF;" prefWidth="400"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Propriétaire :" style="-fx-font-weight: bold;"/>
+                    <ComboBox fx:id="cbProprietaireNom" prefWidth="400" style="-fx-background-color: #FFFFFF;"/>
+                </VBox>
+
+                <HBox spacing="15">
+                    <Button text="Modifier" onAction="#handleModifier" styleClass="button-success"/>
+                    <Button text="Annuler" onAction="#handleAnnuler" styleClass="button-danger"/>
+                </HBox>
+            </VBox>
+
+            <!-- Footer avec fond bleu -->
+            <HBox styleClass="hbox" spacing="10" style="-fx-background-color: blue;">
+                <Hyperlink text="Terms of Service" styleClass="button-link"/>
+                <Hyperlink text="Privacy Policy" styleClass="button-link"/>
+                <Hyperlink text="Help" styleClass="button-link"/>
+                <Label text=" " style="-fx-pref-width: 400px;"/>
+                <Label text="Search..." style="-fx-text-fill: #00008B;"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,121 @@
+.main-container {
+    -fx-background-color: #f5f7fa;
+}
+
+.top-bar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 20;
+    -fx-border-color: transparent transparent #ddd transparent;
+    -fx-alignment: center-left;
+}
+
+.header-title {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.btn-add {
+    -fx-background-color: #f3a426;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 12;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0.2, 0, 2);
+}
+
+.btn-add:hover {
+    -fx-background-color: #e3931c;
+}
+
+.formations-list {
+    -fx-padding: 20;
+    -fx-background-color: white;
+}
+
+.scroll-pane {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+.btn-view {
+    -fx-background-color: #7e57c2;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 6 12;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0.1, 0, 1);
+    -fx-min-width: 60;
+    -fx-alignment: center;
+    -fx-wrap-text: false;
+    -fx-font-weight: bold;
+}
+
+
+.btn-view:hover {
+    -fx-background-color: #6a45b1;
+}
+.btn-edit {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 6 12;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.btn-edit:hover {
+    -fx-background-color: #2980b9;
+}
+
+.btn-delete {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 6 12;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.btn-delete:hover {
+    -fx-background-color: #c0392b;
+}
+.formation-card {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 3);
+}
+
+.formation-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.formation-description {
+    -fx-font-size: 14px;
+    -fx-text-fill: #444;
+}
+
+.formation-formateur {
+    -fx-font-size: 13px;
+    -fx-text-fill: #6c757d;
+    -fx-font-style: italic;
+}
+
+.voir-plus-btn {
+    -fx-background-color: #6a0dad;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-padding: 6 14;
+}
+.voir-plus-btn:hover {
+    -fx-background-color: #8e44ad;
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="74.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controllers.HeaderController">
+
+   <children>
+
+      <!-- Barre de navigation -->
+      <HBox layoutX="0.0" layoutY="0.0" spacing="20.0" style="-fx-background-color: #ebe5e9;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button style="-fx-background-color: transparent; -fx-border-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="60.0">
+                     <image>
+                        <Image url="@loogoo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button onAction="#goToHome" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: #3e566d; -fx-font-size: 14px;" text="Accueil" />
+            <Button onAction="#goToAbout" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: #3e566d; -fx-font-size: 14px;" text="À propos" />
+            <Button onAction="#goToFormations" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: #3e566d; -fx-font-size: 14px;" text="Formations" />
+            <Button onAction="#goToBlogs" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: #3e566d; -fx-font-size: 14px;" text="Blogs" />
+            <Button onAction="#goToHelp" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: #3e566d; -fx-font-size: 14px;" text="Aide Professionnelle" />
+            <Button onAction="#goToLogin" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: #3e566d; -fx-font-size: 14px;" text="Se connecter" />
+         </children>
+      </HBox>
+
+   </children>
+</AnchorPane>

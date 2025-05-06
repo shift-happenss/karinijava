@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.controllers.houss.SidebarEtudiantController"
+      alignment="TOP_CENTER"
+      spacing="20"
+      prefWidth="220"
+      style="-fx-background-color: #1d2671; -fx-padding: 20; -fx-border-radius: 0 10 10 0; -fx-background-radius: 0 10 10 0; -fx-effect: dropshadow(gaussian, #000000, 10, 0.5, 2, 0);">
+
+   <Button text="📚 Mes Cours" onAction="#goToMesCours" prefWidth="180"
+           style="-fx-background-color: #f0f0f0; -fx-text-fill: #1d2671; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 15; -fx-padding: 10;" />
+
+   <Button text="📝 Mes Examens" onAction="#goToMesExamens" prefWidth="180"
+           style="-fx-background-color: #f0f0f0; -fx-text-fill: #1d2671; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 15; -fx-padding: 10;" />
+
+</VBox>

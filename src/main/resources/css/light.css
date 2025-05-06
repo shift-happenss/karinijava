@@ -1,0 +1,25 @@
+/* light.css */
+#rootPane,
+#rootPane .notification-pane,
+#rootPane .scroll-pane,
+#rootPane .vbox,
+#rootPane .hbox {
+    -fx-background-color: white;
+}
+#rootPane .label,
+#rootPane .text-field {
+    -fx-text-fill: black;
+}
+#rootPane .button {
+    -fx-background-color: #f0f0f0;
+    -fx-text-fill: #000;
+}
+#rootPane .item-box {
+    /* si vous utilisez item-box pour vos HBox */
+    -fx-padding: 10;
+    -fx-background-color: #f0f8ff;
+    -fx-border-color: #FFD700;
+    -fx-border-width: 2;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}

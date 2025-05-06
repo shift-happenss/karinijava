@@ -1,0 +1,23 @@
+.news-card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ff9800;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4,0,2,2);
+}
+
+.news-title {
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+
+.news-meta {
+    -fx-font-size: 9pt;
+    -fx-text-fill: #666666;
+}
+
+.refresh-button {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+}

@@ -1,0 +1,25 @@
+/* dark.css */
+#rootPane,
+#rootPane .notification-pane,
+#rootPane .scroll-pane,
+#rootPane .vbox,
+#rootPane .hbox {
+    -fx-background-color: #2b2b2b;
+}
+#rootPane .label,
+#rootPane .text-field {
+    -fx-text-fill: #e0e0e0;
+}
+#rootPane .button {
+    -fx-background-color: #3c3f41;
+    -fx-text-fill: #e0e0e0;
+    -fx-border-color: #555555;
+}
+#rootPane .item-box {
+    -fx-padding: 10;
+    -fx-background-color: #3c3f41;
+    -fx-border-color: #FFD700;
+    -fx-border-width: 2;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controllers.houss.EtudiantCoursController"
+      spacing="20"
+      style="-fx-background-color: linear-gradient(to bottom, #1d2671, #dfc51e); -fx-padding: 30;"
+      prefWidth="1000" prefHeight="800">
+
+   <!-- SUPPRESSION du fx:include sidebar -->
+   <fx:include source="sidebar_etudiant.fxml" />
+
+   <VBox spacing="20"
+         alignment="TOP_CENTER"
+         style="-fx-padding: 30;"
+         VBox.vgrow="ALWAYS">
+
+      <Label text="📚 Cours Disponibles"
+             style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+      <Button text="📄 Voir les Examens"
+              onAction="#goToExamens"
+              style="-fx-background-color: #6c5ce7; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 15; -fx-padding: 8 20;" />
+
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS" style="-fx-background-color: transparent; -fx-border-width: 0;" VBox.vgrow="ALWAYS">
+         <GridPane fx:id="coursContainer"
+                   hgap="20" vgap="20"
+                   style="-fx-padding: 20;"
+                   alignment="TOP_CENTER">
+         </GridPane>
+      </ScrollPane>
+
+   </VBox>
+
+</VBox>

@@ -1,0 +1,94 @@
+.page-container {
+    -fx-padding: 25;
+    -fx-background-color: #fdfdfd;
+}
+
+.page-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.icon-label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #f3a426;
+}
+
+.search-field {
+    -fx-pref-width: 200;
+    -fx-font-size: 14px;
+    -fx-padding: 6 10;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #ccc;
+    -fx-background-color: #ffffff;
+}
+
+.combo-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #f3a426;
+    -fx-border-radius: 8;
+    -fx-padding: 6;
+}
+
+.combo-box .list-cell {
+    -fx-font-size: 14px;
+}
+
+/* 💡 Carte catégorie */
+.category-card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 4, 0.2, 0, 2);
+}
+
+.btn-success {
+    -fx-background-color: #f3a426;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+}
+
+.btn-danger {
+    -fx-background-color: #F44336;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+}
+
+.btn-primary {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+}
+
+.category-list {
+    -fx-padding: 10;
+}
+
+/* 🎁 Details sélectionnés */
+.details-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #f3a426;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0.3, 0, 2);
+}
+
+.details-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f3a426;
+}
+
+.details-description {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}

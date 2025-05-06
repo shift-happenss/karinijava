@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controllers.houss.AjouterQuestionController"
+      spacing="15"
+      alignment="CENTER"
+      prefWidth="400"
+      style="-fx-background-color: linear-gradient(to bottom, #1d2671, #dfc51e); -fx-padding: 40; -fx-background-radius: 15;">
+
+   <!-- Titre -->
+   <Label text="➕ Ajouter une Question"
+          style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+   <!-- Champ texte de la question -->
+   <TextField fx:id="texteField"
+              promptText="📝 Texte de la question"
+              style="-fx-padding: 10; -fx-background-radius: 10;" />
+
+   <!-- ComboBox type -->
+   <ComboBox fx:id="typeCombo"
+             promptText="📌 Type de question"
+             style="-fx-padding: 10; -fx-background-radius: 10;" />
+
+   <!-- ComboBox examen -->
+   <ComboBox fx:id="examenCombo"
+             promptText="📚 Examen associé"
+             style="-fx-padding: 10; -fx-background-radius: 10;" />
+
+   <!-- Bouton valider -->
+   <Button fx:id="btnValider"
+           text="✅ Valider"
+           onAction="#ajouterQuestion"
+           style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 15;" />
+</VBox>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/13"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controllers.ahmed.AjouterEvenementPourEmploiController"
+      prefWidth="1290" prefHeight="690"
+      stylesheets="@/dashboard.css">
+
+    <!-- Navbar fixe en haut -->
+    <HBox styleClass="hbox" spacing="10" style="-fx-background-color: blue;">
+        <Button text="Home" styleClass="button-primary"/>
+        <Button text="About" styleClass="button-primary"/>
+        <Button text="Pages" styleClass="button-primary"/>
+        <Button text="Contact" styleClass="button-primary"/>
+    </HBox>
+
+    <!-- Scrollable content -->
+    <ScrollPane VBox.vgrow="ALWAYS">
+        <content>
+            <VBox spacing="10" style="-fx-padding: 20;">
+                <Label text="Associer des items à cet Emploi"
+                       style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+                <Label text="Événements:" style="-fx-font-weight: bold;"/>
+                <VBox fx:id="vboxEvenements" spacing="5"/>
+
+                <Label text="Cours:" style="-fx-font-weight: bold;"/>
+                <VBox fx:id="vboxCours" spacing="5"/>
+
+                <Label text="Examens:" style="-fx-font-weight: bold;"/>
+                <VBox fx:id="vboxExamens" spacing="5"/>
+
+                <Label text="Formations:" style="-fx-font-weight: bold;"/>
+                <VBox fx:id="vboxFormations" spacing="5"/>
+
+                <Button fx:id="btnValider"
+                        text="Valider la sélection"
+                        onAction="#handleValider"
+                        styleClass="button-success"/>
+            </VBox>
+        </content>
+    </ScrollPane>
+
+    <!-- Footer fixe en bas -->
+    <HBox styleClass="hbox" spacing="10" style="-fx-background-color: blue; -fx-padding: 10;">
+        <Hyperlink text="Terms of Service" styleClass="button-link"/>
+        <Hyperlink text="Privacy Policy" styleClass="button-link"/>
+        <Hyperlink text="Help" styleClass="button-link"/>
+        <Label text=" " style="-fx-pref-width: 400px;"/>
+        <Label text="Search..." style="-fx-text-fill: #00008B;"/>
+    </HBox>
+
+</VBox>

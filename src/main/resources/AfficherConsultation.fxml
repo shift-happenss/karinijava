@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<ScrollPane stylesheets="@front.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.AfficherConsultationController">
+    <content>
+        <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #f4f4f4;">
+
+            <!-- Top Navbar -->
+            <HBox spacing="15" style="-fx-background-color: #003366; -fx-padding: 10;" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+                <Button style="-fx-text-fill: white;" text="Home" />
+                <Button style="-fx-text-fill: white;" text="Consultations" />
+                <Button style="-fx-text-fill: white;" text="Psychologues" />
+            <ImageView fitHeight="55.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="300.0" />
+               </HBox.margin>
+            </ImageView>
+            <padding>
+               <Insets left="200.0" />
+            </padding>
+            </HBox>
+
+            <!-- Content -->
+            <ListView fx:id="consultationListView" layoutX="71.0" layoutY="117.0" prefHeight="365.0" prefWidth="678.0">
+            <padding>
+               <Insets top="100.0" />
+            </padding></ListView>
+            <!-- <Button layoutX="35.0" layoutY="498.0" onAction="#allerVersPsy" styleClass="button-info" text="Afficher Psy" />-->
+             <Button layoutX="35.0" layoutY="498.0" onAction="#allerVersadmin" styleClass="button-info" text="retour admin" />
+
+            <!-- Bottom Navbar (Footer) -->
+            <HBox spacing="15" style="-fx-background-color: #003366; -fx-padding: 10;" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+                <Button style="-fx-text-fill: black; -fx-background-color: #fcdd2c;" styleClass="footer-button" text="Terms of Service" />
+                <Button style="-fx-text-fill: black; -fx-background-color: #fcdd2c;" styleClass="footer-button" text="Privacy Policy" />
+                <Button style="-fx-text-fill: black; -fx-background-color: #fcdd2c;" styleClass="footer-button" text="Help" />
+            <Button styleClass="button-link" text="🔍">
+               <HBox.margin>
+                  <Insets left="200.0" />
+               </HBox.margin>
+            </Button>
+                <TextField fx:id="searchField" layoutX="30" layoutY="20" onKeyReleased="#filterConsultations" promptText="Rechercher..." />
+
+            </HBox>
+         <Button fx:id="btnRetour" layoutX="680.0" layoutY="502.0" onAction="#retour" style="-fx-background-color: #fcdd4b; -fx-text-fill: black;" styleClass="footer-button" text="← Retour" />
+         <AnchorPane layoutX="129.0" layoutY="81.0" prefHeight="35.0" prefWidth="620.0" styleClass="footer-button">
+            <children>
+               <HBox>
+                  <children>
+                        <Button onAction="#onSortByRaisonAsc" styleClass="footer-button" text="Sort by Raison ↑" />
+                        <Button onAction="#onSortByRaisonDesc" styleClass="footer-button" text="Sort by Raison ↓" />
+                        <Button onAction="#onSortByDateAsc" styleClass="footer-button" text="Sort by Date ↑" />
+                        <Button onAction="#onSortByDateDesc" styleClass="footer-button" text="Sort by Date ↓" />
+                  </children>
+               </HBox>
+            </children>
+         </AnchorPane>
+
+
+        </AnchorPane>
+    </content>
+</ScrollPane>

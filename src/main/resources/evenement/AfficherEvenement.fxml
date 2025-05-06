@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ToggleButton?>
+
+<?import javafx.scene.layout.Region?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/13"
+            fx:controller="org.example.controllers.ahmed.AfficherEvenementController"
+            fx:id="rootPane"
+            stylesheets="@/dashboard.css">
+    <children>
+        <!-- On remplace directement la VBox racine par un NotificationPane -->
+
+        <VBox fx:id="rootContainer"
+              spacing="0"
+              styleClass="root-container"
+              AnchorPane.topAnchor="0"
+              AnchorPane.leftAnchor="0"
+              AnchorPane.rightAnchor="0"
+              AnchorPane.bottomAnchor="0">
+
+            <!-- Navbar -->
+            <HBox styleClass="hbox"
+                  spacing="10"
+                  style="-fx-background-color: blue; -fx-padding:10;">
+                <Button text="Home" styleClass="button-primary"/>
+                <Button text="About" styleClass="button-primary"/>
+                <Button text="Pages" styleClass="button-primary"/>
+                <Button text="Contact" styleClass="button-primary"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <HBox alignment="CENTER_RIGHT"
+                      spacing="10"
+                      AnchorPane.topAnchor="10"
+                      AnchorPane.rightAnchor="10">
+                    <Button fx:id="themeToggleButton"
+                            onAction="#onToggleTheme" />
+                </HBox>
+            </HBox>
+
+            <!-- Contenu principal -->
+            <VBox styleClass="vbox-content"
+                  spacing="10"
+                  VBox.vgrow="ALWAYS">
+                <Label text="Liste des evenements"
+                       style="-fx-font-weight: bold;
+                              -fx-font-size: 24px;
+                              -fx-text-fill: #E6B800;"/>
+
+                <!-- Tri -->
+                <HBox spacing="10" alignment="CENTER">
+                    <Label text="Trier par :"
+                           style="-fx-font-size: 14px; -fx-text-fill: #00008B;"/>
+                    <ComboBox fx:id="sortComboBox" promptText="Sélectionner…"/>
+                    <ToggleButton fx:id="orderToggle" text="Ascendant"/>
+                </HBox>
+
+                <!-- Liste des événements -->
+                <VBox fx:id="vboxEvenements" spacing="10"/>
+
+                <!-- Nouveau HBox placé directement sous la liste -->
+                <HBox spacing="10"
+                      alignment="CENTER"
+                      style="-fx-padding: 10 0 0 0;">
+                    <Button text="Ajouter Événement"
+                            onAction="#handleAjouterEvenement"
+                            style="-fx-background-color: blue; -fx-text-fill: white;"/>
+                    <Button text="Retour aux Emplois"
+                            onAction="#handleRetourEmploi"
+                            style="-fx-background-color: blue; -fx-text-fill: white;"/>
+                    <Button text="Retour Admin"
+                            onAction="#allerVersadmin"
+                            style="-fx-background-color: blue; -fx-text-fill: white;"/>
+                </HBox>
+            </VBox>
+
+            <!-- Region expanseur pour pousser le footer en bas -->
+            <Region VBox.vgrow="ALWAYS" />
+
+            <!-- Footer plaqué en bas -->
+            <HBox spacing="10" style="-fx-background-color: blue; -fx-padding: 10;">
+                <Hyperlink text="Terms of Service" styleClass="button-link"/>
+                <Hyperlink text="Privacy Policy" styleClass="button-link"/>
+                <Hyperlink text="Help" styleClass="button-link"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Search..." style="-fx-text-fill: #00008B;"/>
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>

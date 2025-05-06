@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controllers.houss.AddExamenController"
+      spacing="15"
+      alignment="CENTER"
+      style="-fx-background-color: linear-gradient(to bottom, #1d2671, #dfc51e); -fx-padding: 40; -fx-background-radius: 15;"
+      prefWidth="400">
+
+   <Label text="➕ Ajouter un examen"
+          style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+   <ComboBox fx:id="coursComboBox"
+             promptText="🔍 Choisir le cours"
+             style="-fx-padding: 10; -fx-background-radius: 10;" />
+
+   <TextField fx:id="titreField"
+              promptText="📘 Titre de l'examen"
+              style="-fx-padding: 10; -fx-background-radius: 10;" />
+
+   <TextField fx:id="descriptionField"
+              promptText="📝 Description"
+              style="-fx-padding: 10; -fx-background-radius: 10;" />
+
+   <TextField fx:id="noteField"
+              promptText="✅ Note"
+              style="-fx-padding: 10; -fx-background-radius: 10;" />
+
+   <Button fx:id="btnAjouter"
+           text="✅ Ajouter"
+           onAction="#ajouterExamen"
+           style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 12 20; -fx-background-radius: 15;" />
+</VBox>

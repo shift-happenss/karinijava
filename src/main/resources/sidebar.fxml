@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controllers.SidebarController"
+      prefHeight="557.0" prefWidth="131.0"
+      style="-fx-background-color: white;"
+      spacing="8">
+
+   <ImageView fitHeight="95.0" fitWidth="99.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@loogoo.png" />
+      </image>
+   </ImageView>
+
+   <Hyperlink text="Dashboard" onAction="#goToDash"/>
+   <Hyperlink text="Gestion utilisateur" onAction="#goToGestionUser"/>
+   <Hyperlink text="Gestion Categories" onAction="#afficherCategories"/>
+   <Hyperlink text="Gestion Formation" onAction="#afficherFormations"/>
+   <Hyperlink text="Gestion Emploi" onAction="#afficherEmploi"/>
+   <Hyperlink text="Afficher les psys" onAction="#afficherrpsys"/>
+   <Hyperlink text="Afficher les cons" onAction="#afficherrcons"/>
+   <Hyperlink text="Afficher les exams" onAction="#afficherrexam"/>
+   <Hyperlink text="Afficher les cours" onAction="#afficherrcours"/>
+   <Hyperlink text="Afficher les cours front" onAction="#afficherrcourse"/>
+   <Hyperlink text="Afficher les blogs front" onAction="#afficherrblogfront"/>
+   <Hyperlink text="Afficher les blogs back" onAction="#afficherrblogback"/>
+
+   <Button text="Se Deconnecter" onAction="#handleLogout"
+           prefHeight="19.0" prefWidth="130.0"
+           style="-fx-background-color: #e74c3c;"/>
+
+</VBox>

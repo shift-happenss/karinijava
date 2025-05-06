@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.controllers.Categorie.ListeCategoriesController">
+
+    <!-- Barre latérale (sidebar) -->
+    <left>
+        <fx:include source="/sidebar.fxml"/>
+
+    </left>
+
+    <!-- Contenu central -->
+    <center>
+        <VBox spacing="20" styleClass="page-container" stylesheets="@/Categorie/style.css">
+
+            <!-- Toolbar de recherche -->
+            <HBox spacing="15" alignment="CENTER_LEFT" styleClass="toolbar">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="🔍" styleClass="icon-label"/>
+                    <TextField fx:id="searchField" promptText="Nom catégorie..." styleClass="search-field"/>
+                </HBox>
+                <ComboBox fx:id="triComboBox" prefWidth="180" promptText="Trier par" styleClass="combo-box"/>
+            </HBox>
+
+            <!-- Bouton retour admin -->
+            <Button layoutX="35.0" layoutY="498.0" onAction="#allerVersadmin" styleClass="button-info" text="Retour Admin" />
+
+            <!-- Box des détails de la catégorie (initialement cachée) -->
+            <VBox fx:id="detailsBox" spacing="10" visible="false" styleClass="details-box">
+                <Label fx:id="labelNom" styleClass="details-title"/>
+                <Label fx:id="labelDescription" wrapText="true" styleClass="details-description"/>
+            </VBox>
+
+            <!-- Titre de gestion des catégories -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="📂 Gestion des Catégories" styleClass="page-title"/>
+                <Button text="➕ Ajouter" onAction="#ajouterCategorie" styleClass="btn-success"/>
+            </HBox>
+
+            <!-- Scrollpane pour les catégories -->
+            <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+                <VBox fx:id="categoriesContainer" spacing="10" styleClass="category-list"/>
+            </ScrollPane>
+
+        </VBox>
+    </center>
+</BorderPane>

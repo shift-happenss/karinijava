@@ -1,0 +1,38 @@
+/* Styles de base */
+.agenda {
+    -fx-background-color: #fafafa;
+}
+
+/* Groupe 0 : Événements */
+.appointment.group0 {
+    -fxx-background-color: #4a90e2;
+    -fxx-text-fill: white;
+}
+
+/* Groupe 1 : Cours */
+.appointment.group1 {
+    -fxx-background-color: #50e3c2;
+    -fxx-text-fill: white;
+}
+
+/* Groupe 2 : Examens */
+.appointment.group2 {
+    -fxx-background-color: #f5a623;
+    -fxx-text-fill: black;
+}
+
+/* Groupe 3 : Formations */
+.appointment.group3 {
+    -fxx-background-color: #bd10e0;
+    -fxx-text-fill: white;
+}
+
+/* En-têtes et jours */
+.agenda .header {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+.agenda .day-name {
+    -fx-text-fill: #333;
+    -fx-font-size: 12px;
+}

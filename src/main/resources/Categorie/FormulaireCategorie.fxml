@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controllers.Categorie.FormulaireCategorieController"
+      spacing="10"
+      styleClass="form-container"
+      stylesheets="@/Categorie/style.css">
+
+    <Label text="Formulaire Catégorie" styleClass="form-title"/>
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints prefWidth="100"/>
+            <ColumnConstraints prefWidth="250"/>
+        </columnConstraints>
+
+        <Label text="Nom:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nomField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Description:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextArea fx:id="descriptionField" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                  prefRowCount="3" wrapText="true"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Annuler" onAction="#annuler" styleClass="btn-danger"/>
+        <Button text="Enregistrer" onAction="#enregistrer" styleClass="btn-success"/>
+    </HBox>
+
+</VBox>

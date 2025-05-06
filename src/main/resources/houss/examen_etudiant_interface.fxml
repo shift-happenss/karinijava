@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controllers.houss.ExamenEtudiantController"
+      prefWidth="1000"
+      spacing="20"
+      alignment="TOP_CENTER"
+      style="-fx-background-color: linear-gradient(to bottom, #1d2671, #dfc51e); -fx-padding: 30;">
+
+   <!-- PAS de sidebar ici non plus --><fx:include source="sidebar_etudiant.fxml" />
+
+
+   <Label text="🧑‍🎓 Examens Disponibles"
+          style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+   <ScrollPane hbarPolicy="NEVER" vbarPolicy="ALWAYS" style="-fx-background-color: transparent; -fx-border-width: 0;">
+      <content>
+         <GridPane fx:id="examenContainer"
+                   hgap="20" vgap="20"
+                   alignment="TOP_CENTER"
+                   style="-fx-padding: 20;" />
+      </content>
+   </ScrollPane>
+
+</VBox>

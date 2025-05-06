@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/13"
+            fx:controller="org.example.controllers.ahmed.AjouterEvenementController"
+            prefWidth="1290" prefHeight="690"
+            stylesheets="@/dashboard.css">
+    <children>
+        <VBox fx:id="rootContainer"
+              AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
+              AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0"
+              spacing="0">
+
+            <!-- Contenu principal dans un ScrollPane pour permettre le défilement -->
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                <content>
+                    <VBox styleClass="vbox-content" spacing="10" >
+                        <TextField fx:id="tfNom" promptText="Nom de l'événement" style="-fx-background-color: #FFFFFF;"/>
+                        <TextField fx:id="tfType" promptText="Type de l'événement" style="-fx-background-color: #FFFFFF;"/>
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label text="Date Début:" style="-fx-text-fill: #00008B;"/>
+                            <DatePicker fx:id="dpDateDebut"/>
+                        </HBox>
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Label text="Date Fin:" style="-fx-text-fill: #00008B;"/>
+                            <DatePicker fx:id="dpDateFin"/>
+                        </HBox>
+                        <TextArea fx:id="taContenu" promptText="Contenu" prefRowCount="4" style="-fx-background-color: #FFFFFF;"/>
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <Button fx:id="btnGenerate" text="Générer Image" onAction="#handleGenerateImage" styleClass="button-info"/>
+                        </HBox>
+                        <ImageView fx:id="ivPreview" fitWidth="200" fitHeight="200" preserveRatio="true"/>
+
+                        <HBox spacing="5" alignment="CENTER_LEFT">
+                            <TextField fx:id="tfLieu" promptText="Lieu" style="-fx-background-color: #FFFFFF;"/>
+                            <Button fx:id="btnMeteo" text="Voir météo" onAction="#handleVoirMeteo" styleClass="button-info"/>
+                        </HBox>
+                        <Text fx:id="weatherInfo" wrappingWidth="300" style="-fx-font-size: 14px; -fx-fill: #333333;"/>
+
+                        <TextField fx:id="tfLatitude" promptText="Latitude" style="-fx-background-color: #FFFFFF;"/>
+                        <TextField fx:id="tfLongitude" promptText="Longitude" style="-fx-background-color: #FFFFFF;"/>
+
+                        <HBox spacing="10">
+                            <Button text="Ajouter" onAction="#handleAjouter" styleClass="button-success"/>
+                            <Button text="Annuler" onAction="#handleAnnuler" styleClass="button-danger"/>
+                        </HBox>
+                    </VBox>
+                </content>
+            </ScrollPane>
+
+            <!-- Footer fixé en bas -->
+            <HBox styleClass="hbox" style="-fx-background-color: blue; -fx-padding: 10;">
+                <Hyperlink text="Terms of Service" styleClass="button-link"/>
+                <Hyperlink text="Privacy Policy" styleClass="button-link"/>
+                <Hyperlink text="Help" styleClass="button-link"/>
+                <Label text=" " style="-fx-pref-width: 400px;"/>
+                <Label text="Search..." style="-fx-text-fill: #00008B;"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

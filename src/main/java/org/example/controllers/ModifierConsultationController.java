@@ -1,0 +1,184 @@
+package org.example.controllers;
+
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import org.example.entities.Consultation;
+import org.example.entities.Psy;
+import org.example.services.ServiceConsultation;
+import org.example.services.ServicePsy;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+
+public class ModifierConsultationController {
+
+    @FXML private DatePicker datePicker;
+    @FXML private TextField timeField;
+    @FXML private TextArea raisonField;
+    @FXML private TextField statusField;
+    @FXML private ComboBox<Psy> psyCombo;
+    @FXML private Button btnRetour;
+
+
+    private Consultation consultation;
+
+    public void setConsultation(Consultation consultation) {
+        this.consultation = consultation;
+
+        datePicker.setValue(LocalDate.parse(consultation.getDate()));
+        timeField.setText(consultation.getTime());
+        raisonField.setText(consultation.getRaison());
+        statusField.setText(consultation.getStatus());
+
+        try {
+            ServicePsy servicePsy = new ServicePsy();
+            // Vider la liste du ComboBox avant d'ajouter les nouveaux psy
+            psyCombo.getItems().clear();
+
+            // Ajouter les psy dans le ComboBox mais en affichant seulement leurs noms
+            for (Psy p : servicePsy.getList()) {
+                psyCombo.getItems().add(p);
+            }
+
+            // Afficher seulement le nom du psy dans le ComboBox
+            psyCombo.setCellFactory(param -> new ListCell<Psy>() {
+                @Override
+                protected void updateItem(Psy psy, boolean empty) {
+                    super.updateItem(psy, empty);
+                    if (empty || psy == null) {
+                        setText(null);
+                    } else {
+                        setText(psy.getNom());  // Afficher uniquement le nom du psy
+                    }
+                }
+            });
+
+            if (consultation.getPsy() != null) {
+                // Parcourir la liste des psy dans le ComboBox pour trouver celui qui correspond à l'id de la consultation
+                for (Psy p : psyCombo.getItems()) {
+                    if (p.getId() == consultation.getPsy().getId()) {
+                        psyCombo.setValue(p);  // Sélectionner le psy dans le ComboBox
+                        break;
+                    }
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void modifier() {
+        if (!champsValides()) return;
+
+        consultation.setDate(datePicker.getValue().toString());
+        consultation.setTime(timeField.getText());
+        consultation.setRaison(raisonField.getText());
+        consultation.setStatus(statusField.getText());
+        consultation.setPsy(psyCombo.getValue());
+
+        try {
+            new ServiceConsultation().modifier(consultation);
+            closeWindow();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Erreur lors de la modification").show();
+        }
+    }
+
+    private boolean champsValides() {
+        LocalDate date = datePicker.getValue();
+        String heure = timeField.getText().trim();
+        String raison = raisonField.getText().trim();
+        String status = statusField.getText().trim();
+        Psy psy = psyCombo.getValue();
+
+        if (date == null || heure.isEmpty() || raison.isEmpty() || status.isEmpty() || psy == null) {
+            new Alert(Alert.AlertType.WARNING, "⚠️ Tous les champs sont obligatoires.").show();
+            return false;
+        }
+
+        if (!heure.matches("^[0-2]\\d:[0-5]\\d$")) {
+            new Alert(Alert.AlertType.WARNING, "❌ Heure invalide. Format attendu : HH:mm (ex : 10:30)").show();
+            return false;
+        }
+
+        LocalDate today = LocalDate.now();
+        if (date.isBefore(today)) {
+            new Alert(Alert.AlertType.WARNING, "❌ La date doit être aujourd’hui ou dans le futur.").show();
+            return false;
+        }
+
+        if (date.isEqual(today)) {
+            try {
+                LocalTime heureChoisie = LocalTime.parse(heure);
+                if (heureChoisie.isBefore(LocalTime.now())) {
+                    new Alert(Alert.AlertType.WARNING, "❌ L'heure doit être dans le futur.").show();
+                    return false;
+                }
+            } catch (Exception e) {
+                new Alert(Alert.AlertType.ERROR, "Erreur de format d’heure.").show();
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
+
+    @FXML
+    void supprimer() {
+        try {
+            new ServiceConsultation().supprimer(consultation.getId());
+            closeWindow();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Erreur lors de la suppression").show();
+        }
+    }
+
+    private void closeWindow() {
+        Stage stage = (Stage) statusField.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    void retour() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherConsultation.fxml"));
+            Parent root = loader.load();
+            btnRetour.getScene().setRoot(root); // 👈 Affiche la scène précédente dans la même fenêtre
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void allerVersadmin(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Admin.fxml")); // adapte le chemin
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+
+            Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            currentStage.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+}

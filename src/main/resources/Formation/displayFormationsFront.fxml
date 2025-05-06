@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.controllers.Formation.DisplayFormationsFrontController">
+
+    <top>
+        <Label text="Toutes les Formations" style="-fx-font-size: 24px; -fx-padding: 20px;"/>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox fx:id="formationsContainer" spacing="15" style="-fx-padding: 20px;" />
+        </ScrollPane>
+    </center>
+</BorderPane>

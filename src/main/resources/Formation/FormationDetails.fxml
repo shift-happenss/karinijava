@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.controllers.Formation.FormationDetailsController"
+            prefWidth="900" prefHeight="700"
+            style="-fx-background-color: #f9f9f9;">
+
+    <top>
+        <HBox alignment="CENTER" style="-fx-background-color: #3f51b5; -fx-padding: 20;">
+            <Label fx:id="titreLabel"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+            <VBox spacing="20" style="-fx-padding: 30;">
+                <HBox spacing="30">
+                    <ImageView fx:id="formationImageView"
+                               fitWidth="300"
+                               fitHeight="200"
+                               preserveRatio="true"
+                               style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 2); -fx-background-radius: 10;"/>
+                    <GridPane hgap="15" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints prefWidth="120"/>
+                            <ColumnConstraints prefWidth="350"/>
+                        </columnConstraints>
+
+
+                        <Label text="Catégorie:" style="-fx-font-weight: bold;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <Label fx:id="categorieLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                        <Label text="Formateur:" style="-fx-font-weight: bold;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <Label fx:id="formateurLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <Label text="Cible:" style="-fx-font-weight: bold;" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <Label fx:id="cibleLabel" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                        <Label text="État:" style="-fx-font-weight: bold;" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <Label fx:id="etatLabel" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                    </GridPane>
+                </HBox>
+
+                <VBox spacing="10">
+                    <Label text="Description" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <TextArea fx:id="descriptionArea" editable="false" wrapText="true"
+                              style="-fx-background-color: #fff; -fx-border-color: #ccc;"/>
+                </VBox>
+
+                <VBox spacing="10">
+                    <Label text="Contenu" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <TextArea fx:id="contenuArea" editable="false" wrapText="true"
+                              style="-fx-background-color: #fff; -fx-border-color: #ccc;"/>
+                </VBox>
+
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <Label text="Vidéo:" style="-fx-font-weight: bold;"/>
+                    <Hyperlink fx:id="videoLink" onAction="#openVideoUrl"/>
+                    <Button text="▶ Aperçu" onAction="#showVideoPreview"
+                            style="-fx-background-color: #2196f3; -fx-text-fill: white;"/>
+                </HBox>
+
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <Label text="Fichier:" style="-fx-font-weight: bold;"/>
+                    <Hyperlink fx:id="fichierLink" onAction="#openFile"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" style="-fx-padding: 20;">
+            <Button text="Retour" onAction="#handleBack"
+                    style="-fx-background-color: #607d8b; -fx-text-fill: white;"/>
+        </HBox>
+    </bottom>
+</BorderPane>

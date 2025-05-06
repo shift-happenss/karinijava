@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.controllers.AdminController">
+
+   <!-- Barre latérale (sidebar) -->
+   <left>
+      <fx:include source="sidebar.fxml"/>
+   </left>
+
+   <!-- Contenu central avec le texte -->
+   <center>
+      <!-- Conteneur HBox pour aligner horizontalement les éléments -->
+      <HBox spacing="10" style="-fx-padding: 10;">
+         <VBox spacing="5">
+            <Label text="Bienvenue !" />
+            <Label text="Espace Admin">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+         </VBox>
+      </HBox>
+   </center>
+
+</BorderPane>

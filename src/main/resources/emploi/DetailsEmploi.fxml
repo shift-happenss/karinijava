@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.Pane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/13"
+            fx:controller="org.example.controllers.ahmed.DetailsEmploiController"
+            prefWidth="1290" prefHeight="690"
+            stylesheets="@/dashboard.css">
+    <children>
+        <VBox spacing="0"
+              AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
+              AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+
+            <!-- Navbar avec fond bleu -->
+            <HBox styleClass="hbox" spacing="10" style="-fx-background-color: blue;">
+                <Button text="Home" styleClass="button-primary"/>
+                <Button text="About" styleClass="button-primary"/>
+                <Button text="Pages" styleClass="button-primary"/>
+                <Button text="Contact" styleClass="button-primary"/>
+            </HBox>
+
+            <!-- Contenu avec scroll -->
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                <content>
+                    <VBox styleClass="vbox-content" spacing="10">
+                        <Label text="Détails de l'Emploi" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                        <Label fx:id="lblTitre" style="-fx-font-size: 18px;"/>
+                        <Label fx:id="lblDescription" style="-fx-font-size: 16px;"/>
+                        <Label fx:id="lblProprietaire" style="-fx-font-size: 16px;"/>
+
+                        <Label text="Événements associés:" style="-fx-font-weight: bold;"/>
+                        <VBox fx:id="vboxEvenements" spacing="5"/>
+
+                        <Label text="Cours associés:" style="-fx-font-weight: bold;"/>
+                        <VBox fx:id="vboxCours" spacing="5"/>
+
+                        <Label text="Examens associés:" style="-fx-font-weight: bold;"/>
+                        <VBox fx:id="vboxExamens" spacing="5"/>
+
+                        <Label text="Formations associées:" style="-fx-font-weight: bold;"/>
+                        <VBox fx:id="vboxFormations" spacing="5"/>
+
+                        <Button text="Retour" onAction="#handleRetour" styleClass="button-warning"/>
+
+                        <Button fx:id="btnCalendrier" text="Calendrier"
+                                onAction="#handleCalendrier"
+                                layoutX="20" layoutY="450"/>
+                        <!-- Un conteneur caché pour le calendrier (optionnel, on l'ouvrira en Stage) -->
+                        <Pane fx:id="paneCalendrier" visible="false" prefWidth="800" prefHeight="600"
+                              layoutX="50" layoutY="480"/>
+
+                    </VBox>
+                </content>
+            </ScrollPane>
+
+            <!-- Footer -->
+            <HBox styleClass="hbox" spacing="10" style="-fx-background-color: blue;">
+                <Hyperlink text="Terms of Service" styleClass="button-link"/>
+                <Hyperlink text="Privacy Policy" styleClass="button-link"/>
+                <Hyperlink text="Help" styleClass="button-link"/>
+                <Label text=" " style="-fx-pref-width: 400px;"/>
+                <Label text="Search..." style="-fx-text-fill: #00008B;"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
+
