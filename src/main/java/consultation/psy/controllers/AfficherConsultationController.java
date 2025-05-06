@@ -20,6 +20,7 @@ public class AfficherConsultationController {
     @FXML private ListView<Consultation> consultationListView; // Utilisation de Consultation ici
     @FXML private Button btnRetour;
     @FXML private TextField searchField;
+    @FXML private DatePicker datePicker;
 
     private ObservableList<Consultation> observableList; // ObservableList de Consultation
 
@@ -36,6 +37,13 @@ public class AfficherConsultationController {
 
             // Paramétrer la ListView pour afficher les données de consultation
             consultationListView.setItems(observableList);
+            datePicker.valueProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue != null) {
+                    trierParDateSelectionnee(newValue);
+                } else {
+                    consultationListView.setItems(observableList); // réinitialiser si on efface la date
+                }
+            });
 
             // Configuration des cellules pour afficher les détails de chaque consultation
             consultationListView.setCellFactory(param -> new ListCell<Consultation>() {
@@ -96,6 +104,11 @@ public class AfficherConsultationController {
     @FXML
     private void filterConsultations() {
         String filterText = searchField.getText().toLowerCase();
+        if (filterText.isEmpty()) {
+            consultationListView.setItems(observableList);
+            return;
+        }
+
         ObservableList<Consultation> filteredList = FXCollections.observableArrayList();
 
         for (Consultation c : observableList) {
@@ -176,4 +189,21 @@ public class AfficherConsultationController {
             e.printStackTrace();
         }
     }
+    private void trierParDateSelectionnee(java.time.LocalDate dateChoisie) {
+        ObservableList<Consultation> sortedList = FXCollections.observableArrayList();
+
+        for (Consultation c : observableList) {
+            try {
+                java.time.LocalDate dateConsultation = java.time.LocalDate.parse(c.getDate());
+                if (dateConsultation.equals(dateChoisie)) {
+                    sortedList.add(c);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        consultationListView.setItems(sortedList);
+    }
+
 }

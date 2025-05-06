@@ -21,6 +21,7 @@ public class testFX extends Application {
             Parent parent = loader.load();
             Scene scene = new Scene(parent);
             primaryStage.setScene(scene);
+
             primaryStage.setTitle("Home");
             primaryStage.show();
         } catch (IOException e) {
